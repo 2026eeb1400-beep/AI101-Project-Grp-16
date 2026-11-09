@@ -93,7 +93,7 @@ AI101-Project-Grp-16/
 
 ## Requirements
 
-- **Python:** 3.13.5 (version used to execute and check the notebook)
+- **Python:** 3.13.5 (version used to execute and check the notebook) and above
 - Dependencies and pinned versions are listed in `requirements.txt`.
 - The notebook uses Jupyter Notebook, pandas, Matplotlib, and
   scikit-learn.
@@ -112,21 +112,21 @@ cd AI101-Project-Grp-16
 **Windows (Command Prompt):**
 
 ``` bat
-py -3.13 -m venv .venv
+py -m venv .venv
 .venv\Scripts\activate
 ```
 
 **Windows (PowerShell):**
 
 ``` powershell
-py -3.13 -m venv .venv
+py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
 **macOS / Linux:**
 
 ``` bash
-python3.13 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 ```
 
