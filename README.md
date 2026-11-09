@@ -94,6 +94,7 @@ AI101-Project-Grp-16/
 │
 ├── requirements.txt
 └── README.md
+```
 
 ## Requirements
 
@@ -141,19 +142,52 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-### 4. Launch the notebook
+### 4. Train the Model
+
+Execute the following code:
 
 ``` bash
-jupyter notebook heart_failure_simple.ipynb
+python src/train_model.py
 ```
 
-In Jupyter, choose **Kernel → Restart Kernel and Run All Cells** to
-execute the notebook from beginning to end.
+### 5. Evaluate the Model
 
-**Expected result:** the notebook should load a `(299, 13)` dataset,
-report no missing values, train the regression model, display evaluation
-metrics, and show plots. Keep the CSV and notebook together in the
-repository root so the relative CSV path works.
+After training is complete, execute:
+
+``` bash
+python src/evaluate_model.py
+```
+
+### 5. Output
+
+After successful execution, the generated files will be available in:
+
+Trained Model:
+
+``` text
+models/
+└── heart_failure_model.joblib
+```
+
+Evaluation Metrics: 
+
+``` text
+outputs/metrics/
+├── model_metrics.csv
+├── model_weights.csv
+├── confusion_matrix.csv
+└── test_predictions.csv
+```
+
+Visualizations: 
+
+``` text
+outputs/figures/
+├── training_risk_scores.png
+├── training_risk_map.png
+├── confusion_matrix.png
+└── testing_risk_scores.png
+```
 
 ## Model Results
 
