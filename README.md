@@ -13,8 +13,8 @@ death event during the recorded follow-up period.
 |-------------------|------------------------|----------------------------------------------------------|---------------------|
 | Sai Varsith Reddy | `2026AIB1086`          | [@saivarsith](https://github.com/saivarsith)             | Documentation Lead  |
 | Rishit Jha        | `2026EEB1400`          | [@2026eeb1400-beep](https://github.com/2026eeb1400-beep) | Execution Lead      |
-| Pranav Kardile    | `2026MCB1534`          | [@Pranavx-k](https://github.com/Pranavx-k)               | PPT Lead            |
-| Ujjwal Kumar      | `2025DAB1286`          | [@Ujjwal4401](https://github.com/Ujjwal4401)             | Video Lead          |
+| Pranav Kardile    | `2026MCB1534`          | [@Pranavx-k](https://github.com/Pranavx-k)               | Video Lead           |
+| Ujjwal Kumar      | `2025DAB1286`          | [@Ujjwal4401](https://github.com/Ujjwal4401)             | PPT Lead          |
 
 **GitHub repository:**
 <https://github.com/2026eeb1400-beep/AI101-Project-Grp-16>
@@ -63,22 +63,6 @@ The notebook expects the CSV file to be in the **same directory** as
 `heart_failure_simple.ipynb`. Do not rename either file unless you also
 update the path in the notebook.
 
-## Project Workflow
-
-1.  Load the CSV dataset and inspect its dimensions, data types,
-    descriptive statistics, and missing values.
-2.  Standardize the input measurements using their means and standard
-    deviations.
-3.  Compare the average standardized measurements for patients with and
-    without a recorded death event.
-4.  Select five features using the notebook's correlation-based cutoff.
-5.  Split the data into training and testing sets using an 80:20 split,
-    `random_state=42`, and stratification.
-6.  Train a `LinearRegression` model.
-7.  Generate risk scores and classify them using a threshold of `0.5`.
-8.  Evaluate the model using MAE, RMSE, R², accuracy, a confusion
-    matrix, precision, recall, and F1 score.
-9.  Plot the training and testing results.
 
 ## Repository Structure
 
@@ -86,17 +70,30 @@ The repository should contain the following files:
 
 ``` text
 AI101-Project-Grp-16/
-├── README.md
+├── data/
+│   ├── raw/
+│   │   └── heart_failure_clinical_records_dataset.csv
+│   └── processed/
+│
+├── models/
+│
+├── notebooks/
+│   └── heart_failure_analysis.ipynb
+│
+├── outputs/
+│   ├── figures/
+│   └── metrics/
+│
+├── src/
+│   ├── _init_.py
+│   ├── config.py
+│   ├── data_preprocessing.py
+│   ├── train_model.py
+│   ├── evaluate_model.py
+│   └── predict.py
+│
 ├── requirements.txt
-├── heart_failure_simple.ipynb
-├── heart_failure_clinical_records_dataset.csv
-└── images/
-    └── model_evaluation.png
-```
-
-`images/model_evaluation.png` is the expected-output screenshot
-location. Add the screenshot after running the notebook; do not leave an
-empty or placeholder image file in the repository.
+└── README.md
 
 ## Requirements
 
@@ -188,38 +185,6 @@ These values are tied to the current dataset, feature-selection
 procedure, train/test split, and threshold. They may change if any of
 those are changed.
 
-### Expected Output Screenshot
-
-After running all notebook cells, capture a screenshot showing the
-evaluation metrics (and, if possible, the confusion matrix). Save it as:
-
-``` text
-images/model_evaluation.png
-```
-
-Then add it to the repository. The screenshot is not included with this
-README draft.
-
-## Limitations and Responsible Use
-
-- The dataset contains only 299 records, and the test set contains 60
-  records. Evaluation metrics can vary with a different split.
-- The target is binary, while ordinary linear regression is designed for
-  a continuous target. Its predicted scores are not constrained to the
-  interval `[0, 1]`, so they should not be interpreted as calibrated
-  probabilities.
-- The `time` feature is the length of follow-up. For patients who
-  experienced a death event, follow-up ends at the event. Using this
-  feature to predict the event can therefore introduce **target
-  leakage** and would not be available in the same way when assessing a
-  newly admitted patient.
-- The notebook calculates scaling statistics and performs feature
-  selection before the train/test split. This means information from the
-  eventual test set influences preprocessing and feature selection. A
-  more rigorous evaluation would fit preprocessing and select features
-  using training data only.
-- The model is intended only for learning and academic demonstration. It
-  must not be used to make decisions about real patients.
 
 ## Presentation and Video
 
