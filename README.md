@@ -19,11 +19,6 @@ death event during the recorded follow-up period.
 **GitHub repository:**
 <https://github.com/2026eeb1400-beep/AI101-Project-Grp-16>
 
-Each team member is expected to contribute and commit changes using
-their own GitHub account. The lead responsibilities identify who
-coordinates each deliverable; they do not replace individual
-participation.
-
 ## Project Overview
 
 The project uses the heart failure clinical records dataset to build a
@@ -66,7 +61,7 @@ update the path in the notebook.
 
 ## Repository Structure
 
-The repository should contain the following files:
+The repository contains the following files:
 
 ``` text
 AI101-Project-Grp-16/
@@ -191,7 +186,7 @@ outputs/figures/
 
 ## Model Results
 
-The notebook was executed with the supplied dataset and the dependency
+The model was executed with the supplied dataset and the dependency
 versions listed in `requirements.txt`. With the notebook's current split
 and threshold, the testing results were:
 
@@ -239,10 +234,7 @@ checked against the supplied notebook and dataset; the notebook was also
 executed to verify that it runs with the pinned dependencies listed in
 `requirements.txt`.
 
-The team should add any other AI tools used by members, describe their
-purpose, and explain how their outputs were verified. AI assistance does
-not replace the team's responsibility to understand and validate the
-submitted work.
+Claude (Anthropic) was used to refine the model training and evaluation process.
 
 ## Before Submission Checklist
 
