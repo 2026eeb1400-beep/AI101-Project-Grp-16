@@ -1,2 +1,263 @@
-# AI101-Project-Grp-16
-The repository for AI101 Mini-Project of Group 16.
+# Heart Failure Prediction Using Multiple Linear Regression
+
+An educational machine-learning project that uses clinical measurements
+from a heart-failure dataset to explore whether a patient experienced a
+death event during the recorded follow-up period.
+
+> **Important:** This is an academic demonstration, not a medical
+> diagnostic or clinical decision-support tool.
+
+## Team 16
+
+| Team member       | IIT Ropar Entry Number | GitHub Handle                                            | Lead Responsibility |
+|-------------------|------------------------|----------------------------------------------------------|---------------------|
+| Sai Varsith Reddy | `2026AIB1086`          | [@saivarsith](https://github.com/saivarsith)             | Documentation Lead  |
+| Rishit Jha        | `2026EEB1400`          | [@2026eeb1400-beep](https://github.com/2026eeb1400-beep) | Execution Lead      |
+| Pranav Kardile    | `2026MCB1534`          | [@Pranavx-k](https://github.com/Pranavx-k)               | PPT Lead            |
+| Ujjwal Kumar      | `2025DAB1286`          | [@Ujjwal4401](https://github.com/Ujjwal4401)             | Video Lead          |
+
+**GitHub repository:**
+<https://github.com/2026eeb1400-beep/AI101-Project-Grp-16>
+
+Each team member is expected to contribute and commit changes using
+their own GitHub account. The lead responsibilities identify who
+coordinates each deliverable; they do not replace individual
+participation.
+
+## Project Overview
+
+The project uses the heart failure clinical records dataset to build a
+**Multiple Linear Regression** model. The target column is
+`DEATH_EVENT`:
+
+- `1` — death event recorded during the follow-up period.
+- `0` — no death event recorded during the follow-up period.
+
+The notebook selects five input features:
+
+- `age`
+- `ejection_fraction`
+- `serum_creatinine`
+- `serum_sodium`
+- `time`
+
+The model produces a numerical score. The notebook uses a threshold of
+`0.5` to convert that score into a predicted class (`0` or `1`).
+
+## Dataset
+
+The supplied CSV file is `heart_failure_clinical_records_dataset.csv`.
+
+- **Rows:** 299 patient records
+- **Columns:** 13
+- **Target:** `DEATH_EVENT`
+- **Missing values:** none were found during the notebook's data
+  inspection
+
+The dataset contains clinical measurements and patient information,
+including age, anaemia, creatinine phosphokinase, diabetes, ejection
+fraction, high blood pressure, platelets, serum creatinine, serum
+sodium, sex, smoking, follow-up time, and the death-event target.
+
+The notebook expects the CSV file to be in the **same directory** as
+`heart_failure_simple.ipynb`. Do not rename either file unless you also
+update the path in the notebook.
+
+## Project Workflow
+
+1.  Load the CSV dataset and inspect its dimensions, data types,
+    descriptive statistics, and missing values.
+2.  Standardize the input measurements using their means and standard
+    deviations.
+3.  Compare the average standardized measurements for patients with and
+    without a recorded death event.
+4.  Select five features using the notebook's correlation-based cutoff.
+5.  Split the data into training and testing sets using an 80:20 split,
+    `random_state=42`, and stratification.
+6.  Train a `LinearRegression` model.
+7.  Generate risk scores and classify them using a threshold of `0.5`.
+8.  Evaluate the model using MAE, RMSE, R², accuracy, a confusion
+    matrix, precision, recall, and F1 score.
+9.  Plot the training and testing results.
+
+## Repository Structure
+
+The repository should contain the following files:
+
+``` text
+AI101-Project-Grp-16/
+├── README.md
+├── requirements.txt
+├── heart_failure_simple.ipynb
+├── heart_failure_clinical_records_dataset.csv
+└── images/
+    └── model_evaluation.png
+```
+
+`images/model_evaluation.png` is the expected-output screenshot
+location. Add the screenshot after running the notebook; do not leave an
+empty or placeholder image file in the repository.
+
+## Requirements
+
+- **Python:** 3.13.5 (version used to execute and check the notebook)
+- Dependencies and pinned versions are listed in `requirements.txt`.
+- The notebook uses Jupyter Notebook, pandas, Matplotlib, and
+  scikit-learn.
+
+## Setup and Execution
+
+### 1. Clone the repository
+
+``` bash
+git clone https://github.com/2026eeb1400-beep/AI101-Project-Grp-16.git
+cd AI101-Project-Grp-16
+```
+
+### 2. Create and activate a virtual environment
+
+**Windows (Command Prompt):**
+
+``` bat
+py -3.13 -m venv .venv
+.venv\Scripts\activate
+```
+
+**Windows (PowerShell):**
+
+``` powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+
+``` bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+``` bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 4. Launch the notebook
+
+``` bash
+jupyter notebook heart_failure_simple.ipynb
+```
+
+In Jupyter, choose **Kernel → Restart Kernel and Run All Cells** to
+execute the notebook from beginning to end.
+
+**Expected result:** the notebook should load a `(299, 13)` dataset,
+report no missing values, train the regression model, display evaluation
+metrics, and show plots. Keep the CSV and notebook together in the
+repository root so the relative CSV path works.
+
+## Model Results
+
+The notebook was executed with the supplied dataset and the dependency
+versions listed in `requirements.txt`. With the notebook's current split
+and threshold, the testing results were:
+
+| Metric    | Test result |
+|-----------|------------:|
+| MAE       |       0.290 |
+| RMSE      |       0.371 |
+| R²        |       0.363 |
+| Accuracy  |       0.833 |
+| Precision |       0.846 |
+| Recall    |       0.579 |
+| F1 score  |       0.688 |
+
+The test confusion matrix is:
+
+``` text
+[[39  2]
+ [ 8 11]]
+```
+
+Rows represent actual classes (`0`, `1`) and columns represent predicted
+classes (`0`, `1`).
+
+These values are tied to the current dataset, feature-selection
+procedure, train/test split, and threshold. They may change if any of
+those are changed.
+
+### Expected Output Screenshot
+
+After running all notebook cells, capture a screenshot showing the
+evaluation metrics (and, if possible, the confusion matrix). Save it as:
+
+``` text
+images/model_evaluation.png
+```
+
+Then add it to the repository. The screenshot is not included with this
+README draft.
+
+## Limitations and Responsible Use
+
+- The dataset contains only 299 records, and the test set contains 60
+  records. Evaluation metrics can vary with a different split.
+- The target is binary, while ordinary linear regression is designed for
+  a continuous target. Its predicted scores are not constrained to the
+  interval `[0, 1]`, so they should not be interpreted as calibrated
+  probabilities.
+- The `time` feature is the length of follow-up. For patients who
+  experienced a death event, follow-up ends at the event. Using this
+  feature to predict the event can therefore introduce **target
+  leakage** and would not be available in the same way when assessing a
+  newly admitted patient.
+- The notebook calculates scaling statistics and performs feature
+  selection before the train/test split. This means information from the
+  eventual test set influences preprocessing and feature selection. A
+  more rigorous evaluation would fit preprocessing and select features
+  using training data only.
+- The model is intended only for learning and academic demonstration. It
+  must not be used to make decisions about real patients.
+
+## Presentation and Video
+
+- **Project presentation (PPT):** `[Add the shareable PPT link here]`
+- **Project video (maximum 5 minutes):**
+  `[Add the shareable video link here]`
+
+Before submission, replace both placeholders with working links and
+check that they can be opened by the evaluator (including in a
+private/incognito window, if required).
+
+## AI-Use Disclosure
+
+ChatGPT (OpenAI) was used to assist with drafting and organising this
+README and reviewing the project files for documentation details. The
+project description, repository instructions, and reported metrics were
+checked against the supplied notebook and dataset; the notebook was also
+executed to verify that it runs with the pinned dependencies listed in
+`requirements.txt`.
+
+The team should add any other AI tools used by members, describe their
+purpose, and explain how their outputs were verified. AI assistance does
+not replace the team's responsibility to understand and validate the
+submitted work.
+
+## Before Submission Checklist
+
+- [ ] Confirm that all four members have access to the repository.
+- [ ] Each member makes meaningful commits from their own GitHub
+  account.
+- [ ] Keep the notebook and CSV in the same directory, or update the
+  notebook's relative path and this README.
+- [ ] Add the actual evaluation screenshot at
+  `images/model_evaluation.png`.
+- [ ] Replace the PPT and video placeholders with working links.
+- [ ] Ask a teammate to clone the repository on another computer and
+  follow only the instructions in this README.
+- [ ] Confirm that the notebook runs from a fresh clone using the
+  commands above.
+- [ ] Ensure the README and the final PPT slide contain the required
+  AI-use disclosure.
