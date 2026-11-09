@@ -1,1 +1,0 @@
-Place heart_failure_clinical_records_dataset.csv in this folder.
