@@ -153,7 +153,7 @@ After training is complete, execute:
 python src/evaluate_model.py
 ```
 
-### 5. Output
+### 6. Output
 
 After successful execution, the generated files will be available in:
 
