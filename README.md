@@ -99,7 +99,7 @@ AI101-Project-Grp-16/
   scikit-learn.
 
 ## Setup and Execution
-
+"Please run the code one line at a time"
 ### 1. Clone the repository
 
 ``` bash
