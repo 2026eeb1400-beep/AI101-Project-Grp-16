@@ -99,11 +99,13 @@ AI101-Project-Grp-16/
   scikit-learn.
 
 ## Setup and Execution
-"Please run the code one line at a time"
+### Please run the codes one line at a time.
 ### 1. Clone the repository
 
 ``` bash
 git clone https://github.com/2026eeb1400-beep/AI101-Project-Grp-16.git
+```
+``` bash
 cd AI101-Project-Grp-16
 ```
 
@@ -113,6 +115,9 @@ cd AI101-Project-Grp-16
 
 ``` bat
 py -m venv .venv
+```
+
+``` bat
 .venv\Scripts\activate
 ```
 
@@ -120,6 +125,8 @@ py -m venv .venv
 
 ``` powershell
 py -m venv .venv
+```
+``` powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
@@ -127,6 +134,8 @@ py -m venv .venv
 
 ``` bash
 python3 -m venv .venv
+```
+``` bash
 source .venv/bin/activate
 ```
 
@@ -134,6 +143,8 @@ source .venv/bin/activate
 
 ``` bash
 python3 -m pip install --upgrade pip
+```
+``` bash
 python3 -m pip install -r requirements.txt
 ```
 
@@ -235,6 +246,7 @@ executed to verify that it runs with the pinned dependencies listed in
 `requirements.txt`.
 
 Claude (Anthropic) was used to refine the model training and evaluation process.
+Joblib library was recommended by Claude for storage of trained model.
 
 ## Before Submission Checklist
 
