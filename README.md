@@ -126,15 +126,15 @@ py -m venv .venv
 **macOS / Linux:**
 
 ``` bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
 ### 3. Install dependencies
 
 ``` bash
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 ```
 
 ### 4. Train the Model
@@ -142,7 +142,7 @@ python -m pip install -r requirements.txt
 Execute the following code:
 
 ``` bash
-python src/train_model.py
+python3 src/train_model.py
 ```
 
 ### 5. Evaluate the Model
@@ -150,7 +150,7 @@ python src/train_model.py
 After training is complete, execute:
 
 ``` bash
-python src/evaluate_model.py
+python3 src/evaluate_model.py
 ```
 
 ### 6. Output
