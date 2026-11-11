@@ -228,9 +228,9 @@ those are changed.
 
 ## Presentation and Video
 
-- **Project presentation (PPT):** `[Add the shareable PPT link here]`
+- **Project presentation (PPT):** `[https://drive.google.com/file/d/1HImO8rk_FO0sFeZCeQJa8fwFWpAahLJt/view?usp=sharing]`
 - **Project video (maximum 5 minutes):**
-  `[Add the shareable video link here]`
+  `[Add the shareable video link here`
 
 Before submission, replace both placeholders with working links and
 check that they can be opened by the evaluator (including in a
