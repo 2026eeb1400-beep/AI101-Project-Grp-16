@@ -72,9 +72,6 @@ AI101-Project-Grp-16/
 │
 ├── models/
 │
-├── notebooks/
-│   └── heart_failure_analysis.ipynb
-│
 ├── outputs/
 │   ├── figures/
 │   └── metrics/
@@ -88,7 +85,8 @@ AI101-Project-Grp-16/
 │   └── predict.py
 │
 ├── requirements.txt
-└── README.md
+├── README.md
+└── AI101-PPT-Grp-16.pdf
 ```
 
 ## Requirements
