@@ -19,6 +19,12 @@ death event during the recorded follow-up period.
 **GitHub repository:**
 <https://github.com/2026eeb1400-beep/AI101-Project-Grp-16>
 
+**Project video:** 
+<https://youtu.be/clAigGE5ye4>
+
+**Project presentation (PPT):**
+<https://drive.google.com/file/d/1HImO8rk_FO0sFeZCeQJa8fwFWpAahLJt/view?usp=sharing>
+
 ## Project Overview
 
 The project uses the heart failure clinical records dataset to build a
@@ -53,11 +59,6 @@ The dataset contains clinical measurements and patient information,
 including age, anaemia, creatinine phosphokinase, diabetes, ejection
 fraction, high blood pressure, platelets, serum creatinine, serum
 sodium, sex, smoking, follow-up time, and the death-event target.
-
-The notebook expects the CSV file to be in the **same directory** as
-`heart_failure_simple.ipynb`. Do not rename either file unless you also
-update the path in the notebook.
-
 
 ## Repository Structure
 
@@ -223,17 +224,6 @@ These values are tied to the current dataset, feature-selection
 procedure, train/test split, and threshold. They may change if any of
 those are changed.
 
-
-## Presentation and Video
-
-- **Project presentation (PPT):** `[https://drive.google.com/file/d/1HImO8rk_FO0sFeZCeQJa8fwFWpAahLJt/view?usp=sharing]`
-- **Project video:**
-  `[Add the shareable video link here`
-
-Before submission, replace both placeholders with working links and
-check that they can be opened by the evaluator (including in a
-private/incognito window, if required).
-
 ## AI-Use Disclosure
 
 ChatGPT (OpenAI) was used to assist with drafting and organising this
@@ -245,20 +235,3 @@ executed to verify that it runs with the pinned dependencies listed in
 
 Claude (Anthropic) was used to refine the model training and evaluation process.
 Joblib library was recommended by Claude for storage of trained model.
-
-## Before Submission Checklist
-
-- [ ] Confirm that all four members have access to the repository.
-- [ ] Each member makes meaningful commits from their own GitHub
-  account.
-- [ ] Keep the notebook and CSV in the same directory, or update the
-  notebook's relative path and this README.
-- [ ] Add the actual evaluation screenshot at
-  `images/model_evaluation.png`.
-- [ ] Replace the PPT and video placeholders with working links.
-- [ ] Ask a teammate to clone the repository on another computer and
-  follow only the instructions in this README.
-- [ ] Confirm that the notebook runs from a fresh clone using the
-  commands above.
-- [ ] Ensure the README and the final PPT slide contain the required
-  AI-use disclosure.
