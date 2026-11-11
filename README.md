@@ -74,9 +74,18 @@ AI101-Project-Grp-16/
 ├── models/
 │
 ├── outputs/
+│   │
 │   ├── figures/
+│   │   ├── training_risk_scores.png
+│   │   ├── training_risk_map.png
+│   │   ├── confusion_matrix.png
+│   │   └── testing_risk_scores.png
+│   │
 │   └── metrics/
-│
+│       ├── model_metrics.csv
+│       ├── model_weights.csv
+│       ├── confusion_matrix.csv
+│       └── test_predictions.csv
 ├── src/
 │   ├── _init_.py
 │   ├── config.py
